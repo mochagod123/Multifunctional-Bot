@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Partials } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
 require('dotenv').config();
 
 const token = process.env.TOKEN;
@@ -33,6 +33,9 @@ const client = new Client({
 		Partials.ThreadMember,
 	],
 });
+
+client.commands = new Collection();
+client.clientid = process.env.CLIENTID;
 
 require("./module/event")(client);
 
