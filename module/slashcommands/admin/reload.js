@@ -12,6 +12,14 @@ module.exports = {
             fs.readdirSync(path.join(__dirname, '..', '..', 'slashcommands')).forEach(file => {
                 delete require.cache[require.resolve(path.join(__dirname, '..', '..', 'slashcommands', file))];
             });
+
+            fs.readdirSync(path.join(__dirname, '..', '..', 'slashcommands', 'admin')).forEach(file => {
+                delete require.cache[require.resolve(path.join(__dirname, '..', '..', 'slashcommands', 'admin', file))];
+            });
+
+            fs.readdirSync(path.join(__dirname, '..', '..', 'slashcommands', 'tools')).forEach(file => {
+                delete require.cache[require.resolve(path.join(__dirname, '..', '..', 'slashcommands', 'tools', file))];
+            });
     
             fs.readdirSync(path.join(__dirname, '..', '..', 'lib')).forEach(file => {
                 delete require.cache[require.resolve(path.join(__dirname, '..', '..', 'lib', file))];
@@ -26,6 +34,10 @@ module.exports = {
             });
     
             fs.readdirSync(path.join(__dirname, '..', '..', 'slashcommands')).map(file => require(path.join(__dirname, '..', '..', 'slashcommands', file)));
+
+            fs.readdirSync(path.join(__dirname, '..', '..', 'slashcommands', 'admin')).map(file => require(path.join(__dirname, '..', '..', 'slashcommands', 'admin', file)));
+
+            fs.readdirSync(path.join(__dirname, '..', '..', 'slashcommands', 'tools')).map(file => require(path.join(__dirname, '..', '..', 'slashcommands', 'tools', file)));
     
             fs.readdirSync(path.join(__dirname, '..', '..', 'lib')).map(file => require(path.join(__dirname, '..', '..', 'lib', file)));
     

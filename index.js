@@ -36,6 +36,7 @@ const client = new Client({
 
 client.commands = new Collection();
 client.clientid = process.env.CLIENTID;
+client.ownerid = process.env.OWNERID;
 
 require("./module/event")(client);
 

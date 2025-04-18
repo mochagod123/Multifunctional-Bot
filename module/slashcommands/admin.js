@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, Colors, EmbedBuilder } = require('discord.js');
 const fs = require("fs");
 const path = require("path");
 
@@ -17,6 +17,15 @@ module.exports = {
         ),
     
     async execute(interaction) {
+        if (interaction.user.id != interaction.client.ownerid) {
+            const errorembed = new EmbedBuilder()
+            .setTitle('権限がありません。')
+            .setColor(Colors.Red)
+            .setTimestamp()
+            .setDescription("関係者以外実行できません。")
+            return await interaction.reply({embeds: [errorembed], ephemeral: true})
+        }
+
         const subcommandName = interaction.options.getSubcommand();
         const subcommandPath = path.join(__dirname, "admin", `${subcommandName}.js`);
 
