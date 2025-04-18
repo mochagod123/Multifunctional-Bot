@@ -1,0 +1,24 @@
+{
+  "name": "multifunctional-bot",
+  "version": "1.0.0",
+  "description": "Discord.jsで開発しています。とても便利なBotです。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mochagod123/Multifunctional-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mochagod123/Multifunctional-Bot/issues"
+  },
+  "homepage": "https://github.com/mochagod123/Multifunctional-Bot#readme",
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.5.0"
+  }
+}
